@@ -1,0 +1,6 @@
+plugin:
+    name: 'xl1034.likes::lang.plugin.name'
+    description: 'xl1034.likes::lang.plugin.description'
+    author: xl1034
+    icon: oc-icon-thumbs-up
+    homepage: ''

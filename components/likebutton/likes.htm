@@ -1,0 +1,28 @@
+
+<form data-request="onLike"
+      data-request-data="id: '{{ likeable_id }}', is_dislike: 0"
+      data-request-update="'{{ __SELF__ }}::likes': '#likes-{{ likeable_id }}'"
+      data-request-flash
+      class="d-inline">
+    <a href="javascript:;" class="{% if my_like == 'like' %}text-success{% else %} text-lightgray {% endif %}"
+       onclick="$(this).closest('form').submit()">
+        {{ 'xl1034.likes::lang.plugin.like' | trans }}
+    </a>
+</form>
+
+
+<span
+        class="{% if rating > 0 %} text-good {% endif %} {% if rating < 0 %} text-bad {% endif %}">
+            {{ rating }}
+</span>
+
+<form data-request="onLike"
+      data-request-data="id: '{{ likeable_id }}', is_dislike: 1"
+      data-request-update="'{{ __SELF__ }}::likes': '#likes-{{ likeable_id }}'"
+      data-request-flash
+      class="d-inline">
+    <a href="javascript:;" class="{% if my_like == 'dislike' %}text-red{% else %} text-lightgray {% endif %}"
+       onclick="$(this).closest('form').submit()">
+        {{ 'xl1034.likes::lang.plugin.dislike' | trans }}
+    </a>
+</form>
